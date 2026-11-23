@@ -1,130 +1,129 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="320">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" height="300">
   <defs>
-    <!-- Background Gradient -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#090D16" />
-      <stop offset="50%" stop-color="#0D1117" />
-      <stop offset="100%" stop-color="#06080E" />
-    </linearGradient>
-
-    <!-- Glowing Text Gradient -->
-    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00F0FF" />
-      <stop offset="45%" stop-color="#38BDF8" />
-      <stop offset="80%" stop-color="#7C3AED" />
-      <stop offset="100%" stop-color="#A855F7" />
-    </linearGradient>
-
-    <!-- Glass Slate Highlight -->
-    <linearGradient id="glassBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.4" />
-      <stop offset="50%" stop-color="#1E293B" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.4" />
-    </linearGradient>
-
-    <!-- Subtle Radial Glow -->
-    <radialGradient id="ambientGlow" cx="50%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.12" />
-      <stop offset="50%" stop-color="#7C3AED" stop-opacity="0.08" />
-      <stop offset="100%" stop-color="#090D16" stop-opacity="0" />
+    <!-- Matte Obsidian Slate Floor with Directional Falloff -->
+    <radialGradient id="bannerBg" cx="30%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#181B23" />
+      <stop offset="45%" stop-color="#111318" />
+      <stop offset="85%" stop-color="#0A0B0E" />
+      <stop offset="100%" stop-color="#060709" />
     </radialGradient>
 
-    <!-- Filters -->
-    <filter id="neonBloom" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <!-- Warm Bone-White Directional Stone Shader -->
+    <linearGradient id="boneStone" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="25%" stop-color="#F5F6F8" />
+      <stop offset="70%" stop-color="#E2E5EC" />
+      <stop offset="100%" stop-color="#CFD4DF" />
+    </linearGradient>
+
+    <!-- Brushed Champagne Bronze Accent -->
+    <linearGradient id="champagneBronze" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFE3D3" />
+      <stop offset="35%" stop-color="#D8C1A2" />
+      <stop offset="75%" stop-color="#A58763" />
+      <stop offset="100%" stop-color="#735A3D" />
+    </linearGradient>
+
+    <!-- 3-Tier Directional Studio Shadow -->
+    <filter id="studioShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.88" />
+      <feDropShadow dx="8" dy="18" stdDeviation="16" flood-color="#020305" flood-opacity="0.6" />
     </filter>
 
-    <!-- Tech Grid -->
-    <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00F0FF" stroke-width="0.5" stroke-opacity="0.04" />
+    <!-- Architectural Hairline Grid Pattern -->
+    <pattern id="archGrid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#222733" stroke-width="0.6" stroke-opacity="0.4" />
     </pattern>
   </defs>
 
   <style>
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.35)); }
-      50% { opacity: 1; filter: drop-shadow(0 0 24px rgba(0, 240, 255, 0.75)); }
-    }
-    @keyframes statusDot {
-      0%, 100% { opacity: 0.4; transform: scale(0.9); }
-      50% { opacity: 1; transform: scale(1.15); }
-    }
-    .pulsing-title {
-      animation: pulseGlow 4s infinite ease-in-out;
-    }
-    .status-dot {
-      animation: statusDot 2s infinite ease-in-out;
-      transform-origin: 72px 267px;
-    }
-    .mono {
-      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-    }
-    .sans {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    }
+    .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Roboto, sans-serif; }
   </style>
 
-  <!-- Canvas Container with Glass Border -->
-  <rect width="1200" height="320" rx="12" fill="url(#bgGrad)" stroke="url(#glassBorder)" stroke-width="1.5" />
-  <rect width="1200" height="320" rx="12" fill="url(#techGrid)" />
-  <rect width="1200" height="320" rx="12" fill="url(#ambientGlow)" />
+  <!-- Container Base -->
+  <rect width="1200" height="300" rx="12" fill="url(#bannerBg)" stroke="#222733" stroke-width="1.2" />
+  <rect width="1200" height="300" rx="12" fill="url(#archGrid)" />
 
-  <!-- Outer Corner Brackets (Precision HUD) -->
-  <!-- Top Left -->
-  <path d="M 24 54 L 24 24 L 54 24" fill="none" stroke="#00F0FF" stroke-width="2.5" />
-  <line x1="60" y1="24" x2="160" y2="24" stroke="#00F0FF" stroke-width="1" stroke-opacity="0.3" />
-  
-  <!-- Top Right -->
-  <path d="M 1146 24 L 1176 24 L 1176 54" fill="none" stroke="#7C3AED" stroke-width="2.5" />
-  <line x1="1040" y1="24" x2="1140" y2="24" stroke="#7C3AED" stroke-width="1" stroke-opacity="0.3" />
+  <!-- Architectural Frame Edge Hairlines -->
+  <line x1="28" y1="28" x2="1172" y2="28" stroke="#D8C1A2" stroke-width="1" stroke-opacity="0.25" />
+  <line x1="28" y1="272" x2="1172" y2="272" stroke="#222733" stroke-width="1" />
 
-  <!-- Bottom Left -->
-  <path d="M 24 266 L 24 296 L 54 296" fill="none" stroke="#00F0FF" stroke-width="2.5" />
-  
-  <!-- Bottom Right -->
-  <path d="M 1146 296 L 1176 296 L 1176 266" fill="none" stroke="#7C3AED" stroke-width="2.5" />
+  <!-- ==================== LEFT: KINKO SCULPTURAL EMBLEM ==================== -->
+  <g transform="translate(-80, -78) scale(0.45)" filter="url(#studioShadow)">
+    <!-- Monolithic Stem -->
+    <rect x="330" y="292" width="92" height="440" rx="3" fill="url(#boneStone)" />
+    <line x1="333" y1="293" x2="419" y2="293" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.95" />
+    <line x1="331" y1="295" x2="331" y2="729" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.9" />
 
-  <!-- Eyebrow Tag -->
-  <g transform="translate(600, 72)">
-    <text text-anchor="middle" fill="#00F0FF" class="mono" font-size="13" font-weight="700" letter-spacing="4">
-      SYSTEM ARCHITECT // AI &amp; AUTONOMOUS PIPELINES
-    </text>
+    <!-- Upper Branch -->
+    <path d="M 442 508 L 618 292 L 694 292 L 516 512 Z" fill="url(#boneStone)" />
+    <line x1="444" y1="506" x2="620" y2="293" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.95" />
+    <line x1="620" y1="293" x2="691" y2="293" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.95" />
+
+    <!-- Lower Branch (Bone Mass) -->
+    <path d="M 516 512 L 694 732 L 630 732 L 462 524 Z" fill="url(#boneStone)" />
+
+    <!-- Lower Branch (Champagne Bronze Accent Facet) -->
+    <path d="M 462 524 L 630 732 L 608 732 L 442 514 Z" fill="url(#champagneBronze)" />
+    <line x1="443" y1="513" x2="461" y2="523" stroke="#FFF6EB" stroke-width="1.0" stroke-opacity="0.85" />
   </g>
 
-  <!-- Main Title: RENZIAC -->
-  <g transform="translate(600, 148)" class="pulsing-title">
-    <text text-anchor="middle" fill="url(#titleGrad)" filter="url(#neonBloom)" class="mono" font-size="62" font-weight="900" letter-spacing="22">
-      RENZIAC
-    </text>
-  </g>
+  <!-- Vertical Divider Hairline -->
+  <line x1="264" y1="60" x2="264" y2="240" stroke="#262D3B" stroke-width="1.2" />
 
-  <!-- Subtitle -->
-  <g transform="translate(600, 196)">
-    <text text-anchor="middle" fill="#94A3B8" class="sans" font-size="15.5" font-weight="500" letter-spacing="0.5">
-      Designing self-scaling content engines, distributed compute clusters &amp; high-retention media systems.
-    </text>
-  </g>
+  <!-- ==================== RIGHT: EDITORIAL TYPOGRAPHY ==================== -->
+  <g transform="translate(300, 64)">
+    
+    <!-- Editorial Overline Badge -->
+    <g transform="translate(0, 0)">
+      <rect width="324" height="22" rx="4" fill="#141820" stroke="#262D3B" stroke-width="1" />
+      <circle cx="12" cy="11" r="3.5" fill="#D8C1A2" />
+      <text x="24" y="15" fill="#D8C1A2" class="mono" font-size="10.5" font-weight="700" letter-spacing="1.8">
+        IDENTITY // ARCHITECTURAL MINIMALISM
+      </text>
+    </g>
 
-  <!-- Bottom Status-Pill (Unten Links) -->
-  <g transform="translate(54, 248)">
-    <rect width="320" height="38" rx="19" fill="#111827" stroke="#1E293B" stroke-width="1.2" />
-    <circle cx="22" cy="19" r="4.5" fill="#00FF9D" class="status-dot" />
-    <text x="36" y="24" fill="#F8FAFC" class="mono" font-size="11.5" font-weight="700" letter-spacing="1.5">
-      CLUSTER ONLINE  |  NODE: AACHEN, DE
+    <!-- Primary Title -->
+    <text x="0" y="66" fill="#F3F4F6" class="sans" font-size="38" font-weight="800" letter-spacing="4">
+      K I N K O
     </text>
-  </g>
-
-  <!-- Bottom Right Protocol Pill -->
-  <g transform="translate(860, 248)">
-    <rect width="286" height="38" rx="19" fill="#111827" stroke="#1E293B" stroke-width="1.2" />
-    <circle cx="20" cy="19" r="4" fill="#7C3AED" />
-    <text x="34" y="24" fill="#A855F7" class="mono" font-size="11" font-weight="700" letter-spacing="2">
-      ED25519-SK // ENCRYPTED MESH
+    <text x="206" y="64" fill="#8E97A6" class="mono" font-size="13" font-weight="600">
+      // RENZIAC STUDIO
     </text>
-  </g>
 
+    <!-- Subtitle -->
+    <text x="0" y="98" fill="#CBD1DC" class="sans" font-size="14.5" font-weight="500" letter-spacing="0.3">
+      Autonomous AI Systems &amp; Programmatic High-Retention Media Synthesis
+    </text>
+
+    <!-- Hairline Separator -->
+    <line x1="0" y1="118" x2="840" y2="118" stroke="#222834" stroke-width="1" />
+
+    <!-- Spec Pills -->
+    <g transform="translate(0, 136)">
+      <!-- Pill 1 -->
+      <rect width="210" height="26" rx="5" fill="#13161D" stroke="#242B38" stroke-width="1" />
+      <text x="14" y="17" fill="#D8C1A2" class="mono" font-size="10" font-weight="600" letter-spacing="0.8">
+        NVENC p7 + VIDEOTOOLBOX
+      </text>
+
+      <!-- Pill 2 -->
+      <g transform="translate(222, 0)">
+        <rect width="186" height="26" rx="5" fill="#13161D" stroke="#242B38" stroke-width="1" />
+        <text x="14" y="17" fill="#F3F4F6" class="mono" font-size="10" font-weight="600" letter-spacing="0.8">
+          TAILSCALE MESH ONLINE
+        </text>
+      </g>
+
+      <!-- Pill 3 -->
+      <g transform="translate(420, 0)">
+        <rect width="200" height="26" rx="5" fill="#13161D" stroke="#242B38" stroke-width="1" />
+        <text x="14" y="17" fill="#8E97A6" class="mono" font-size="10" font-weight="600" letter-spacing="0.8">
+          24/7 EDGE ORCHESTRATION
+        </text>
+      </g>
+    </g>
+
+  </g>
 </svg>

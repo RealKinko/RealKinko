@@ -2,170 +2,164 @@
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="panelBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#090D16" />
-      <stop offset="100%" stop-color="#06080E" />
+      <stop offset="0%" stop-color="#12151B" />
+      <stop offset="60%" stop-color="#0E1015" />
+      <stop offset="100%" stop-color="#090B0E" />
     </linearGradient>
 
-    <!-- Glass Slate Gradients -->
-    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#111827" stop-opacity="0.95" />
-      <stop offset="100%" stop-color="#0B0F19" stop-opacity="0.95" />
+    <!-- Architectural Card Background -->
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#151820" />
+      <stop offset="100%" stop-color="#101217" />
     </linearGradient>
 
-    <linearGradient id="meshGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00F0FF" />
-      <stop offset="50%" stop-color="#7C3AED" />
-      <stop offset="100%" stop-color="#00FF9D" />
+    <!-- Architectural Accent Gradient -->
+    <linearGradient id="accentBronze" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EFE3D3" />
+      <stop offset="50%" stop-color="#D8C1A2" />
+      <stop offset="100%" stop-color="#9B7C56" />
     </linearGradient>
-
-    <filter id="glowPoint" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
   </defs>
 
   <style>
     .mono { font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace; }
-    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Roboto, sans-serif; }
     
-    @keyframes moveRight {
+    @keyframes moveBus1 {
       0% { cx: 240px; opacity: 0; }
-      15% { opacity: 1; }
-      85% { opacity: 1; }
+      20% { opacity: 0.9; }
+      80% { opacity: 0.9; }
       100% { cx: 600px; opacity: 0; }
     }
-    @keyframes moveRight2 {
+    @keyframes moveBus2 {
       0% { cx: 600px; opacity: 0; }
-      15% { opacity: 1; }
-      85% { opacity: 1; }
+      20% { opacity: 0.9; }
+      80% { opacity: 0.9; }
       100% { cx: 960px; opacity: 0; }
     }
     .flow-dot1 {
-      animation: moveRight 3s linear infinite;
+      animation: moveBus1 3.5s linear infinite;
     }
     .flow-dot2 {
-      animation: moveRight2 3s linear infinite 1.5s;
+      animation: moveBus2 3.5s linear infinite 1.75s;
     }
   </style>
 
   <!-- Container Box -->
-  <rect width="1200" height="340" rx="12" fill="url(#panelBg)" stroke="#1E293B" stroke-width="1.5" />
+  <rect width="1200" height="340" rx="12" fill="url(#panelBg)" stroke="#222733" stroke-width="1.2" />
 
   <!-- Top Encrypted Tailscale Mesh Banner -->
   <g transform="translate(260, 20)">
-    <rect width="680" height="42" rx="21" fill="#111827" stroke="url(#meshGradient)" stroke-width="1.5" />
-    <circle cx="28" cy="21" r="5" fill="#00F0FF" />
-    <text x="340" y="26" text-anchor="middle" fill="#F8FAFC" class="mono" font-size="12" font-weight="800" letter-spacing="2.5">
-      ENCRYPTED TAILSCALE MESH NETWORK (100.X.X.X) // ZERO-TRUST
+    <rect width="680" height="42" rx="21" fill="#141720" stroke="#2D3545" stroke-width="1.2" />
+    <circle cx="28" cy="21" r="4.5" fill="#D8C1A2" />
+    <text x="340" y="26" text-anchor="middle" fill="#F3F4F6" class="mono" font-size="11.5" font-weight="700" letter-spacing="2">
+      ENCRYPTED TAILSCALE MESH NETWORK (100.X.X.X) // ZERO-TRUST TOPOLOGY
     </text>
-    <circle cx="652" cy="21" r="5" fill="#7C3AED" />
+    <circle cx="652" cy="21" r="4.5" fill="#D8C1A2" />
   </g>
 
   <!-- Data Flow Bus Line -->
-  <line x1="240" y1="62" x2="240" y2="86" stroke="#00F0FF" stroke-width="2" />
-  <line x1="600" y1="62" x2="600" y2="86" stroke="#7C3AED" stroke-width="2" />
-  <line x1="960" y1="62" x2="960" y2="86" stroke="#00FF9D" stroke-width="2" />
+  <line x1="240" y1="62" x2="240" y2="86" stroke="#D8C1A2" stroke-width="1.5" stroke-opacity="0.8" />
+  <line x1="600" y1="62" x2="600" y2="86" stroke="#D8C1A2" stroke-width="1.5" stroke-opacity="0.8" />
+  <line x1="960" y1="62" x2="960" y2="86" stroke="#D8C1A2" stroke-width="1.5" stroke-opacity="0.8" />
 
   <!-- Horizontal Inter-Node Data Bus -->
-  <line x1="240" y1="86" x2="960" y2="86" stroke="#1E293B" stroke-width="2" stroke-dasharray="4,6" />
+  <line x1="240" y1="86" x2="960" y2="86" stroke="#262D3B" stroke-width="1.5" stroke-dasharray="4,6" />
 
-  <!-- Animated Data Flow Glowing Packets -->
-  <circle cy="86" r="4.5" fill="#00F0FF" filter="url(#glowPoint)" class="flow-dot1" />
-  <circle cy="86" r="4.5" fill="#7C3AED" filter="url(#glowPoint)" class="flow-dot2" />
+  <!-- Subtle Data Flow Indicators -->
+  <circle cy="86" r="3.5" fill="#EFE3D3" class="flow-dot1" />
+  <circle cy="86" r="3.5" fill="#D8C1A2" class="flow-dot2" />
 
   <!-- ==================== NODE 01: CONTROL & DEV ==================== -->
   <g transform="translate(48, 100)">
-    <rect width="344" height="216" rx="10" fill="url(#cardGrad1)" stroke="rgba(0, 240, 255, 0.35)" stroke-width="1.2" />
+    <rect width="344" height="216" rx="8" fill="url(#cardBg)" stroke="#262D3B" stroke-width="1.2" />
     
     <!-- Card Header Pill -->
-    <rect x="18" y="18" width="308" height="32" rx="6" fill="#0E1626" />
-    <circle cx="34" cy="34" r="4.5" fill="#00F0FF" />
-    <text x="48" y="38" fill="#00F0FF" class="mono" font-size="11.5" font-weight="800" letter-spacing="1">
+    <rect x="18" y="18" width="308" height="32" rx="5" fill="#181D26" />
+    <circle cx="34" cy="34" r="4" fill="#D8C1A2" />
+    <text x="48" y="38" fill="#F3F4F6" class="mono" font-size="11.5" font-weight="700" letter-spacing="1">
       NODE 01 — CONTROL &amp; DEV
     </text>
 
     <!-- Hardware Badge -->
-    <text x="20" y="74" fill="#F8FAFC" class="mono" font-size="13" font-weight="800">
+    <text x="20" y="74" fill="#F3F4F6" class="mono" font-size="13" font-weight="700">
       RTX-3070 Workstation
     </text>
-    <text x="20" y="92" fill="#38BDF8" class="mono" font-size="10.5" font-weight="600">
+    <text x="20" y="92" fill="#D8C1A2" class="mono" font-size="10.5" font-weight="600">
       NVIDIA RTX 3070 (8GB NVENC p7) // Win 11 Pro
     </text>
 
-    <line x1="20" y1="106" x2="324" y2="106" stroke="#1E293B" stroke-width="1" />
+    <line x1="20" y1="106" x2="324" y2="106" stroke="#222834" stroke-width="1" />
 
     <!-- Core Roles -->
-    <text x="20" y="128" fill="#64748B" class="mono" font-size="10" font-weight="700">CORE ROLES &amp; PIPELINES:</text>
+    <text x="20" y="128" fill="#7E8796" class="mono" font-size="10" font-weight="700">CORE ROLES &amp; PIPELINES:</text>
     
-    <text x="20" y="148" fill="#F8FAFC" class="sans" font-size="12" font-weight="600">• Skill Engineering &amp; Autonomous Agents</text>
-    <text x="20" y="168" fill="#F8FAFC" class="sans" font-size="12" font-weight="600">• Remotion Studio &amp; Programmatic Video</text>
-    <text x="20" y="188" fill="#F8FAFC" class="sans" font-size="12" font-weight="600">• Playwright &amp; GitHub Sync Engine</text>
+    <text x="20" y="148" fill="#E2E5EC" class="sans" font-size="12" font-weight="500">• Skill Engineering &amp; Autonomous Agents</text>
+    <text x="20" y="168" fill="#E2E5EC" class="sans" font-size="12" font-weight="500">• Remotion Studio &amp; Programmatic Video</text>
+    <text x="20" y="188" fill="#E2E5EC" class="sans" font-size="12" font-weight="500">• Playwright &amp; GitHub Sync Engine</text>
 
-    <circle cx="320" cy="198" r="3" fill="#00F0FF" />
+    <circle cx="320" cy="198" r="2.5" fill="#D8C1A2" />
   </g>
 
   <!-- ==================== NODE 02: RENDER ENGINE ==================== -->
   <g transform="translate(428, 100)">
-    <rect width="344" height="216" rx="10" fill="url(#cardGrad1)" stroke="rgba(124, 58, 237, 0.4)" stroke-width="1.2" />
+    <rect width="344" height="216" rx="8" fill="url(#cardBg)" stroke="#262D3B" stroke-width="1.2" />
     
     <!-- Card Header Pill -->
-    <rect x="18" y="18" width="308" height="32" rx="6" fill="#1A1333" />
-    <circle cx="34" cy="34" r="4.5" fill="#7C3AED" />
-    <text x="48" y="38" fill="#A855F7" class="mono" font-size="11.5" font-weight="800" letter-spacing="1">
-      NODE 02 — RENDER ENGINE
+    <rect x="18" y="18" width="308" height="32" rx="5" fill="#181D26" />
+    <circle cx="34" cy="34" r="4" fill="#F3F4F6" />
+    <text x="48" y="38" fill="#F3F4F6" class="mono" font-size="11.5" font-weight="700" letter-spacing="1">
+      NODE 02 — CINEMATIC ENGINE
     </text>
 
     <!-- Hardware Badge -->
-    <text x="20" y="74" fill="#F8FAFC" class="mono" font-size="13" font-weight="800">
+    <text x="20" y="74" fill="#F3F4F6" class="mono" font-size="13" font-weight="700">
       Apple Silicon M2
     </text>
-    <text x="20" y="92" fill="#C084FC" class="mono" font-size="10.5" font-weight="600">
+    <text x="20" y="92" fill="#D8C1A2" class="mono" font-size="10.5" font-weight="600">
       h264_videotoolbox // macOS Headless Cut
     </text>
 
-    <line x1="20" y1="106" x2="324" y2="106" stroke="#1E293B" stroke-width="1" />
+    <line x1="20" y1="106" x2="324" y2="106" stroke="#222834" stroke-width="1" />
 
     <!-- Core Roles -->
-    <text x="20" y="128" fill="#64748B" class="mono" font-size="10" font-weight="700">CORE ROLES &amp; PIPELINES:</text>
+    <text x="20" y="128" fill="#7E8796" class="mono" font-size="10" font-weight="700">CORE ROLES &amp; PIPELINES:</text>
     
-    <text x="20" y="148" fill="#F8FAFC" class="sans" font-size="12" font-weight="600">• Hardware VideoToolbox Multi-Pass</text>
-    <text x="20" y="168" fill="#F8FAFC" class="sans" font-size="12" font-weight="600">• Whisper ASR &amp; Acoustic Deduplication</text>
-    <text x="20" y="188" fill="#F8FAFC" class="sans" font-size="12" font-weight="600">• High-Throughput Cinematic Pipeline</text>
+    <text x="20" y="148" fill="#E2E5EC" class="sans" font-size="12" font-weight="500">• Hardware VideoToolbox Multi-Pass</text>
+    <text x="20" y="168" fill="#E2E5EC" class="sans" font-size="12" font-weight="500">• Whisper ASR &amp; Acoustic Deduplication</text>
+    <text x="20" y="188" fill="#E2E5EC" class="sans" font-size="12" font-weight="500">• High-Throughput Cinematic Pipeline</text>
 
-    <circle cx="320" cy="198" r="3" fill="#7C3AED" />
+    <circle cx="320" cy="198" r="2.5" fill="#D8C1A2" />
   </g>
 
   <!-- ==================== NODE 03: 24/7 ORCHESTRATOR ==================== -->
   <g transform="translate(808, 100)">
-    <rect width="344" height="216" rx="10" fill="url(#cardGrad1)" stroke="rgba(0, 255, 157, 0.35)" stroke-width="1.2" />
+    <rect width="344" height="216" rx="8" fill="url(#cardBg)" stroke="#262D3B" stroke-width="1.2" />
     
     <!-- Card Header Pill -->
-    <rect x="18" y="18" width="308" height="32" rx="6" fill="#0C241B" />
-    <circle cx="34" cy="34" r="4.5" fill="#00FF9D" />
-    <text x="48" y="38" fill="#00FF9D" class="mono" font-size="11.5" font-weight="800" letter-spacing="1">
+    <rect x="18" y="18" width="308" height="32" rx="5" fill="#181D26" />
+    <circle cx="34" cy="34" r="4" fill="#D8C1A2" />
+    <text x="48" y="38" fill="#F3F4F6" class="mono" font-size="11.5" font-weight="700" letter-spacing="1">
       NODE 03 — 24/7 ORCHESTRATOR
     </text>
 
     <!-- Hardware Badge -->
-    <text x="20" y="74" fill="#F8FAFC" class="mono" font-size="13" font-weight="800">
+    <text x="20" y="74" fill="#F3F4F6" class="mono" font-size="13" font-weight="700">
       Raspberry Pi 5
     </text>
-    <text x="20" y="92" fill="#34D399" class="mono" font-size="10.5" font-weight="600">
+    <text x="20" y="92" fill="#D8C1A2" class="mono" font-size="10.5" font-weight="600">
       Broadcom BCM2712 Quad-Core // Debian ARM64
     </text>
 
-    <line x1="20" y1="106" x2="324" y2="106" stroke="#1E293B" stroke-width="1" />
+    <line x1="20" y1="106" x2="324" y2="106" stroke="#222834" stroke-width="1" />
 
     <!-- Core Roles -->
-    <text x="20" y="128" fill="#64748B" class="mono" font-size="10" font-weight="700">CORE ROLES &amp; PIPELINES:</text>
+    <text x="20" y="128" fill="#7E8796" class="mono" font-size="10" font-weight="700">CORE ROLES &amp; PIPELINES:</text>
     
-    <text x="20" y="148" fill="#F8FAFC" class="sans" font-size="12" font-weight="600">• Multi-Channel Job Queue &amp; Watchers</text>
-    <text x="20" y="168" fill="#F8FAFC" class="sans" font-size="12" font-weight="600">• SQLite State-Guard &amp; Integrity Check</text>
-    <text x="20" y="188" fill="#F8FAFC" class="sans" font-size="12" font-weight="600">• Instant Telegram Delivery (@R23piBot)</text>
+    <text x="20" y="148" fill="#E2E5EC" class="sans" font-size="12" font-weight="500">• Multi-Channel Job Queue &amp; Watchers</text>
+    <text x="20" y="168" fill="#E2E5EC" class="sans" font-size="12" font-weight="500">• SQLite State-Guard &amp; Integrity Check</text>
+    <text x="20" y="188" fill="#E2E5EC" class="sans" font-size="12" font-weight="500">• Instant Telegram Delivery (@R23piBot)</text>
 
-    <circle cx="320" cy="198" r="3" fill="#00FF9D" />
+    <circle cx="320" cy="198" r="2.5" fill="#D8C1A2" />
   </g>
 </svg>
